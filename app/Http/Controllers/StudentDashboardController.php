@@ -14,6 +14,7 @@ class StudentDashboardController extends Controller
             ->where('status', 'enrolled')
             ->get();
         $totalCourses = $enrollments->count();
-        return view('student.dashboard', compact('student', 'enrollments', 'totalCourses'));
+        return view('student.dashboard',
+            compact('student', 'enrollments', 'totalCourses'));
     }
 }

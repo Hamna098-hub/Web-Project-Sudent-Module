@@ -61,11 +61,11 @@
         {{-- Main Content --}}
         <div class="col-md-10">
             <div class="topbar d-flex justify-content-between align-items-center">
-                <h6 class="mb-0 text-muted">Welcome back, <strong>{{ Auth::guard('student')->user()->student_name }}</strong></h6>
-                <div>
-                    <span class="badge bg-primary">{{ Auth::guard('student')->user()->department }}</span>
-                    <span class="badge bg-success ms-1">Semester {{ Auth::guard('student')->user()->semester }}</span>
-                </div>
+    <h6 class="mb-0 text-muted">Welcome back, <strong>{{ Auth::user()?->name ?? 'Guest' }}</strong></h6>
+    <div>
+        <span class="badge bg-primary">{{ Auth::user()?->role ?? 'Student' }}</span>
+    </div>
+</div>
             </div>
             <div class="main-content">
                 @if(session('success'))

@@ -11,8 +11,7 @@ class StudentGradeController extends Controller
     {
         $student = Auth::guard('student')->user();
         $grades = Grade::where('student_id', $student->id)
-            ->with('course')
-            ->get();
+            ->with('course')->get();
         return view('student.grades', compact('grades'));
     }
 }

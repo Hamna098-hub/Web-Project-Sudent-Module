@@ -11,8 +11,7 @@ class StudentAttendanceController extends Controller
     {
         $student = Auth::guard('student')->user();
         $attendances = Attendance::where('student_id', $student->id)
-            ->with('course')
-            ->get();
+            ->with('course')->get();
         return view('student.attendance', compact('attendances'));
     }
 }
